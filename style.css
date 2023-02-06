@@ -1,0 +1,50 @@
+.container{
+    /*display: grid;*/
+    margin: 0 auto;
+    padding: 0;
+    width: 1200px;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*grid-template-rows: 1fr;*/
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.header__image-girl{
+    display: flex;
+    height: 80vh;
+    background-image: url(./assets/images/germangirl1.png);
+    background-repeat: no-repeat;
+}
+
+.header__navbar{
+    display: grid;
+    grid-column: 2/3;
+    margin-left: 220px;
+    /*border: 1px solid black;*/
+
+}
+
+.navbar__names{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+
+}
+
+li{
+    list-style-type: none;
+    margin-right: 20px;  
+}
+
+video {    
+    display: flex;    
+    justify-content: center;    
+    align-items: center;    
+    /*margin-left: 50px;*/    
+    width: 480px;}
