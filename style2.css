@@ -1,0 +1,36 @@
+.wrapper{
+    min-height: 100%;
+    display: grid;
+    grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+.header{
+    grid-area: header;
+    padding: 15px;
+    display: grid;
+    background-color: bisque;
+    grid-template: 100px / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
+    text-align: center;
+}
+
+.header__hi-text{
+    height: auto;
+    grid-column: 2/3;
+}
+
+.header__menu{
+    grid-column: 3/4;
+}
+.header__list{
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: end;
+}
+
+.footer{
+    background-color:burlywood;
+}
