@@ -1,68 +1,68 @@
-.container{
-    /*display: grid;*/
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
+.container {
+  /*display: grid;*/
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
 }
 
-.header{
-    display: grid;
-    margin-left: 5%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    /*grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;*/
-    grid-template-areas: 
-    "header-hello" 
+.header {
+  display: grid;
+  margin-left: 5%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  /*grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;*/
+  grid-template-areas:
+    "header-hello"
     "header-image"
     "header-video"
     "header-text";
-    /*grid-template-rows: 1fr;*/
-    /*grid-column-start: 1;
+  /*grid-template-rows: 1fr;*/
+  /*grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;*/
 }
 
-.header__hi-title{
-    display: grid;
-    justify-self: center;
+.header__hi-title {
+  display: grid;
+  justify-self: center;
 }
 
-
-.header__image-girl{
-    display: grid;
-    grid-area: header-image;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    height: 80vh;
-    background-position: right;
-    padding: 0;
-    margin-top: -10px;
-    background-image: url(./assets/images/germangirl1.png);
-    background-repeat: no-repeat;
-}*/
-
-.header__navbar{
-    display: grid;
-    grid-column: 2/3;
-    align-items: flex-end;    
+.header__image-girl {
+  display: grid;
+  grid-area: header-image;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  height: 80vh;
+  background-position: right;
+  padding: 0;
+  margin-top: -10px;
+  background-image: url(./assets/images/germangirl1.png);
+  background-repeat: no-repeat;
 }
 
-.link{
-    color: #EB1B1B;    
-    text-align: center;    
-    padding: 20px 7px;    
-    text-decoration: none;    
-    font-size: 17px;
+.header__navbar {
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 1/3;
+  align-items: flex-end;
 }
 
-.link:hover{
-    transition: 1s linear;    
-    cursor: pointer;    
-    background-color: rgb(230, 129, 129);    
-    color: rgb(110, 103, 103);
+.link {
+  color: #eb1b1b;
+  text-align: center;
+  padding: 20px 7px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.link:hover {
+  transition: 1s linear;
+  cursor: pointer;
+  background-color: rgb(230, 129, 129);
+  color: rgb(110, 103, 103);
 }
 
 /*.link:visited {    
@@ -70,38 +70,81 @@
 }
 */
 
-.navbar__names{
+.navbar__names {
+  display: flex;
+  overflow: hidden;
+  margin-right: 10px;
+  justify-content: flex-end;
+  flex-direction: row;
+  margin-top: 4%;
+}
+
+li {
+  list-style-type: none;
+  margin-right: 20px;
+}
+
+.header__block-about {
+  display: grid;
+}
+
+.header__hi-video {
+  display: grid;
+  justify-self: center;
+}
+
+video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin-left: 50px;*/
+  width: 80%; /*изменили с 480px на 80%, чтобы видео сжималось*/
+  padding: 1%;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 3%;
+  border: 8px solid #fdc435e3;
+}
+
+@media screen and (max-width: 960px) {
+  .header {
     display: flex;
-    overflow: hidden;   
-    margin-right: 10px;
-    justify-content: flex-end;
-    flex-direction: row;
-    margin-top: 4%;
-}
+    flex-direction: column;
+    align-items: center;
+  }
 
-li{
-    list-style-type: none;
-    margin-right: 20px;  
-}
+  .header__image-girl {
+    display: none;
+    background-image: none;
+  }
 
-.header__block-about{
-    display: grid;
-}
+  .header__hi-title {
+    text-align: center;
+    font-size: 28px;
+  }
 
-.header__hi-video{
-    display: grid;
-    justify-self: center;
-}
+  .header__block-about {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
 
-video {    
-    display: flex;    
-    justify-content: center;    
-    align-items: center;    
-    /*margin-left: 50px;*/    
-    width: 80%; /*изменили с 480px на 80%, чтобы видео сжималось*/
-    padding: 1%;    
-    border-radius: 30px;    
+  .header__hi-video {
+    display: flex;
+    text-align: end;
+  }
+
+  video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 1%;
+    border-radius: 15px;
     overflow: hidden;
-    margin-bottom: 3%;    
-    border: 8px solid #fdc435e3;
+    margin-bottom: 3%;
+    border: 4px solid #fdc435e3;
+  }
 }
