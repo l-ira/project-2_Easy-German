@@ -10,17 +10,15 @@
   margin-left: 5%;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  /*grid-template: minmax(100px, auto) 1fr minmax(70px, auto) / 1fr;*/
   grid-template-areas:
     "header-hello"
     "header-image"
     "header-video"
     "header-text";
-  /*grid-template-rows: 1fr;*/
-  /*grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;*/
+}
+
+.hamburger-menu {
+  display: none;
 }
 
 .header__hi-title {
@@ -35,11 +33,12 @@
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  height: 80vh;
+  width: 100%;
+  height: 100%;
   background-position: right;
   padding: 0;
   margin-top: -10px;
-  background-image: url(./assets/images/germangirl1.png);
+  background-image: url(./assets/images/germangirl.png);
   background-repeat: no-repeat;
 }
 
@@ -47,7 +46,6 @@
   display: grid;
   grid-column: 2/3;
   grid-row: 1/3;
-  align-items: flex-end;
 }
 
 .link {
@@ -72,7 +70,7 @@
 
 .navbar__names {
   display: flex;
-  overflow: hidden;
+  overflow: hiddenn;
   margin-right: 10px;
   justify-content: flex-end;
   flex-direction: row;
@@ -106,6 +104,35 @@ video {
   border: 8px solid #fdc435e3;
 }
 
+/*Main block*/
+.main-block{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 40vh;
+  grid-template-areas:
+  "main_for-whom"
+  "main_for-whom"
+  "main_for-whom"
+  "main_for-whom"
+  "main_for-whom"
+  "main_for-whom"
+  "main_for-whom"
+  "main_for-whom"
+}
+
+.icons{
+  display: flex;
+  width: 20%;
+}
+
+.for-whom{
+  background-image: url(./assets/images/blob_for-whom.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100%;
+}
+
+
 @media screen and (max-width: 960px) {
   .header {
     display: flex;
@@ -121,7 +148,7 @@ video {
 
   .header__hi-title {
     text-align: center;
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .header__block-about {
@@ -135,6 +162,7 @@ video {
   .header__hi-video {
     display: flex;
     justify-content: center;
+    z-index: -1;
   }
 
   video {
@@ -148,4 +176,101 @@ video {
     margin-bottom: 3%;
     border: 4px solid #fdc435e3;
   }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  /* скрываем чекбокс */
+#menu__toggle {
+  opacity: 0;
 }
+/* стилизуем кнопку */
+.menu__btn {
+  display: flex; /* используем flex для центрирования содержимого */
+  align-items: center;  /* центрируем содержимое кнопки */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fdc435e3;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+/* контейнер меню */
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: #ECEFF1;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+}
+/* элементы меню */
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.menu__item:hover {
+  background-color: #fdc435e3;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+
+}
+
