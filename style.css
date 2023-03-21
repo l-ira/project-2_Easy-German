@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap'); /*добавили шрифт*/
+
+.container {
+  /*display: grid;*/
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  font-family: Fira Sans;
+  font-size: 10px; /*1em = 10px установили масштаб страницы, для удобства использования em */
+  background-color: rgba(255, 196, 0, 0.24);
+}
+
+.header {
+  display: grid;
+  margin-left: 5%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header-hello"
+    "header-image"
+    "header-video"
+    "header-text";
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.header__hi-title {
+  justify-self: center;
+  font-size: 3.5em;
+  margin-left: -2.5em;
+}
+
+.header__hi-title span:nth-child(2) {
+  color: #eb1b1b;
+}
+
+.header__hi-title span:last-child {
+  color: #fdc435;
+}
+
+.header__image-girl {
+  display: grid;
+  grid-area: header-image;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin-top: 0;
+  background-image: url(./assets/images/germangirl.png);
+  background-repeat: no-repeat;
+  /* background-position: right; */
+  background-position: top right;
+  font-weight: 300;
+}
+
+.header__about-text {
+  font-size: 1.8em;
+}
+
+.header__navbar {
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+
+.link {
+  color: #eb1b1b;
+  text-align: center;
+  padding: 10px 7px;
+  text-decoration: none;
+  font-size: 17px;
+  border-radius: 5px;
+}
+
+.link:hover {
+  transition: 0.3s linear;
+  cursor: pointer;
+  background-color: rgb(230, 129, 129);
+  color: rgb(110, 103, 103);
+}
+
+/*.link:visited {    
+    color: #3E343E;
+}
+*/
+
+.navbar__names {
+  display: flex;
+  overflow: hiddenn;
+  margin-right: 10px;
+  justify-content: flex-end;
+  flex-direction: row;
+  margin-top: 2%;
+}
+
+li {
+  list-style-type: none;
+  margin-right: 20px;
+}
+
+.header__block-about {
+  display: grid;
+}
+
+.header__hi-video {
+  display: grid;
+  justify-self: center;
+}
+
+video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin-left: 50px;*/
+  width: 80%;
+  /*изменили с 480px на 80%, чтобы видео сжималось*/
+  padding: 0.5%;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 3%;
+  border: 8px solid #fdc435e3;
+}
+
+/*Main block*/
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  color: #df9100e3;
+  margin: 2em 0;
+}
+
+.main-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 25em);
+  grid-template-areas:
+    "main_for-whom main__div__img"
+    "main__div__img main_for-whom"
+    "main_for-whom main__div__img"
+    "main__div__img main_for-whom";
+    grid-row-gap: 10em;
+}
+
+.icons {
+  display: flex;
+  flex-grow: 1;
+  width: 50em;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.main__div__img {
+  width: 14em;
+  /* height: 40%; */
+}
+
+.main__for-whom:nth-child(even) { /*Подвинули четные элементы к центру*/
+  margin-right: 10em;
+}
+
+.main__for-whom:nth-child(odd) { /*Подвинули нечетные элементы к центру*/
+  margin-left: 10em;
+}
+
+.for-whom {
+  background-image: url(./assets/images/blob_for-whom.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  text-align: center;
+  height: 16em;
+  font-size: 1.9em;
+}
+
+.for-whom__text {
+  /* display: flex; */
+  width: 10em;
+  font-size: 1em;
+  margin-top: 4em;
+  margin-left: 8em;
+}
+
+
+
+@media screen and (max-width: 960px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .header__image-girl {
+    display: none;
+    background-image: none;
+  }
+
+  .header__hi-title {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .header__block-about {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .header__hi-video {
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+  }
+
+  video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 1%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 3%;
+    border: 4px solid #fdc435e3;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  /* скрываем чекбокс */
+  #menu__toggle {
+    opacity: 0;
+  }
+
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex;
+    /* используем flex для центрирования содержимого */
+    align-items: center;
+    /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  /* добавляем "гамбургер" */
+  .menu__btn>span,
+  .menu__btn>span::before,
+  .menu__btn>span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fdc435e3;
+  }
+
+  .menu__btn>span::before {
+    content: '';
+    top: -8px;
+  }
+
+  .menu__btn>span::after {
+    content: '';
+    top: 8px;
+  }
+
+  /* контейнер меню */
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #ECEFF1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  }
+
+  /* элементы меню */
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .menu__item:hover {
+    background-color: #fdc435e3;
+  }
+
+  #menu__toggle:checked~.menu__btn>span {
+    transform: rotate(45deg);
+  }
+
+  #menu__toggle:checked~.menu__btn>span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+
+  #menu__toggle:checked~.menu__btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  #menu__toggle:checked~.menu__box {
+    visibility: visible;
+    left: 0;
+  }
+
+  .menu__btn>span,
+  .menu__btn>span::before,
+  .menu__btn>span::after {
+    transition-duration: .25s;
+  }
+
+  .menu__box {
+    transition-duration: .25s;
+  }
+
+  .menu__item {
+    transition-duration: .25s;
+  }
+
+}
