@@ -94,7 +94,7 @@ body {
 
 .navbar__names {
   display: flex;
-  overflow: hiddenn;
+  overflow: hidden;
   margin-right: 10px;
   justify-content: flex-end;
   flex-direction: row;
@@ -417,7 +417,7 @@ video {
 
 .navbar__names {
   display: flex;
-  overflow: hiddenn;
+  overflow: hidden;
   margin-right: 10px;
   justify-content: flex-end;
   flex-direction: row;
@@ -642,5 +642,4 @@ video {
   .menu__item {
     transition-duration: .25s;
   }
-
 }
