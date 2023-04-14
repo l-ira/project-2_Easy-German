@@ -130,8 +130,15 @@ video {
 }
 
 /*Main block*/
+.main {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
 .title {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   font-size: 3em;
   color: #df9100e3;
@@ -139,6 +146,45 @@ video {
 }
 
 .main-block {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  font-size: 2em;
+}
+
+.main-block-1,
+.main-block-2,
+.main-block-3,
+.main-block-4 {
+display: flex;
+justify-content: space-between;
+height: 20%;
+}
+
+.icons {
+  display: flex;
+  /* flex-grow: 1; */
+  width: 10em;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.for-whom {
+  background-image: url(./assets/images/blob_for-whom.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  text-align: center;
+  height: 16em;
+  font-size: 1.2em;
+}
+
+.main__div__img {
+  width: 14em;
+}
+
+/* .main-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(4, 25em);
@@ -161,14 +207,13 @@ video {
 
 .main__div__img {
   width: 14em;
-  /* height: 40%; */
 }
 
-.main__for-whom:nth-child(even) { /*Подвинули четные элементы к центру*/
+.main__for-whom:nth-child(even) { Подвинули четные элементы к центру
   margin-right: 10em;
 }
 
-.main__for-whom:nth-child(odd) { /*Подвинули нечетные элементы к центру*/
+.main__for-whom:nth-child(odd) { Подвинули нечетные элементы к центру
   margin-left: 10em;
 }
 
@@ -183,13 +228,13 @@ video {
 }
 
 .for-whom__text {
-  /* display: flex; */
+  
   width: 10em;
   font-size: 1em;
   margin-top: 4em;
   margin-left: 8em;
 }
-
+*/
 
 
 @media screen and (max-width: 960px) {
@@ -487,9 +532,11 @@ video {
   background-size: contain;
   background-position: center center;
 }
+}
 
 
-@media screen and (max-width: 960px) {
+
+/* @media screen and (max-width: 960px) {
   .header {
     display: flex;
     flex-direction: column;
@@ -537,17 +584,17 @@ video {
     display: block;
   }
 
-  /* скрываем чекбокс */
+  
   #menu__toggle {
     opacity: 0;
   }
 
-  /* стилизуем кнопку */
+  
   .menu__btn {
     display: flex;
-    /* используем flex для центрирования содержимого */
+    
     align-items: center;
-    /* центрируем содержимое кнопки */
+    
     position: fixed;
     top: 20px;
     left: 20px;
@@ -557,7 +604,7 @@ video {
     z-index: 1;
   }
 
-  /* добавляем "гамбургер" */
+  
   .menu__btn>span,
   .menu__btn>span::before,
   .menu__btn>span::after {
@@ -578,7 +625,7 @@ video {
     top: 8px;
   }
 
-  /* контейнер меню */
+  
   .menu__box {
     display: block;
     position: fixed;
@@ -595,7 +642,6 @@ video {
     box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
   }
 
-  /* элементы меню */
   .menu__item {
     display: block;
     padding: 12px 24px;
@@ -642,4 +688,4 @@ video {
   .menu__item {
     transition-duration: .25s;
   }
-}
+} */
