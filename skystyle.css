@@ -1,0 +1,7 @@
+.container {
+    background-image: url(./assets/images/Sky.avif);
+    background-size: 200%;
+    height: 50vh;
+    width: 50vw;
+    background-repeat: no-repeat;
+}
