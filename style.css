@@ -98,7 +98,8 @@ body {
   margin-right: 10px;
   justify-content: flex-end;
   flex-direction: row;
-  margin-top: 2%;
+  margin-top: 0;
+  padding-top: 10px;
 }
 
 li {
@@ -190,6 +191,7 @@ justify-content: space-between;
   background-position: center center;
   text-align: center;
   font-size: 1.2em;
+  position: relative;
 }
 
 .for-whom__text {
@@ -197,6 +199,7 @@ justify-content: space-between;
   width: 20vw;
   min-width: 200px;
   font-size: 1.3vw;
+  position: absolute;
   
 }
 
@@ -321,6 +324,10 @@ justify-content: space-between;
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
+  }
+
+  li {
+    margin-right: 0;
   }
 
   .menu__item:hover {
