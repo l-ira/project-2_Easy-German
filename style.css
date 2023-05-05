@@ -33,6 +33,7 @@ body {
   justify-self: center;
   font-size: 3.5em;
   margin-left: -2.5em;
+  text-align: center;
 }
 
 .header__hi-title span:nth-child(2) {
@@ -225,6 +226,7 @@ justify-content: space-between;
   .header__hi-title {
     text-align: center;
     font-size: 22px;
+    margin-left: 0em;
   }
 
   .header__block-about {
@@ -238,7 +240,7 @@ justify-content: space-between;
   .header__hi-video {
     display: flex;
     justify-content: center;
-    z-index: -1;
+    z-index: 0;
   }
 
   video {
@@ -274,7 +276,7 @@ justify-content: space-between;
     width: 26px;
     height: 26px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 10;
   }
 
   /* добавляем "гамбургер" */
@@ -313,6 +315,7 @@ justify-content: space-between;
     text-align: center;
     background-color: #ECEFF1;
     box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    z-index: 2;
   }
 
   /* элементы меню */
