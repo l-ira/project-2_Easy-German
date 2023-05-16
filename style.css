@@ -236,7 +236,7 @@ video {
 	display: flex;
 	width: 70vw;
 	justify-content: space-between;
-	min-width: 50vw;
+	min-width: 30vw;
 }
 
 .service-background {
@@ -249,14 +249,27 @@ video {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
+	/* min-height: 44vh; */
+	min-width: 27vw; 
 }
 
 .service__text {
 	text-align: center;
-	font-size: 2.5em;
+	font-size: 2.2em;
+	line-height: 2em;
+	min-width: 50px;
+	width: 30vw;
+
+	
 }
 
-@media screen and (max-width: 885px) and (min-width: 500px) {
+.service__text_font {
+	color:#eb1b1b;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 885px) /*and (min-width: 500px)*/ {
 	.header {
 		display: flex;
 		flex-direction: column;
@@ -438,7 +451,7 @@ video {
 		background-size: cover;
 	}
 
-	.service {
+	 .service {
 		display: flex;
 		flex-direction: column;
 		width: 70vw;
@@ -461,7 +474,7 @@ video {
 	.service__text {
 		text-align: center;
 		font-size: 1.8em;
-	}
+	} 
 }
 
 /* @media screen and (max-width: 885px) {
@@ -489,4 +502,4 @@ video {
 		text-align: center;
 		font-size: 1.8em;
 	}
-} */
+}  */
