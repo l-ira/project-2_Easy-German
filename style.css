@@ -242,7 +242,7 @@ video {
 	display: flex;
 	width: 70vw;
 	justify-content: space-between;
-	min-width: 50vw;
+	min-width: 30vw;
 }
 
 .service-background {
@@ -532,4 +532,4 @@ video {
 		text-align: center;
 		font-size: 1.8em;
 	}
-} */
+}  */
